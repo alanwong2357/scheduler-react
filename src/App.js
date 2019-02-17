@@ -14,13 +14,15 @@ class App extends React.Component {
           </div>
         </header>
         <main>
-          <div className="row-md-6">
+        <div id="flex-container">
+          <div id="flex-item">
             <Calendar />
             // <h2>Forms</h2>
           </div>
-          <div className="row-md-6">
+          <div id="flex-item">
             <Form/>
           </div>
+        </div>
         </main>
       </div>
     );
@@ -40,7 +42,7 @@ export default App;
 //
 // // const localizer = Calendar.momentLocalizer(moment);
 //
-// className App extends Component {
+// class App extends Component {
 //   // state = {
 //   //   events: [
 //   //     {

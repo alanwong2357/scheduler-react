@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import moment from "moment";
 
 class Form extends React.Component {
     constructor() {
       super();
-      this.fdate = {value: "2019-02-14 15:00"};
+      this.state = {value: ""};
+      this.handleChange = this.handleChange.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
     }
 
     onSubmit(event) {
       event.preventDefault();
-      alert('Your favorite flavor is: ' + this.fdate.value);
+      alert('Your favorite flavor is: ' + this.state.value);
       // console.log(event.target.getAttribute("finalDate").value); // from elements property
       // console.log(event.target.getAttribute("firstname").vlaue);
 
@@ -17,15 +19,11 @@ class Form extends React.Component {
     }
 
     handleChange(event) {
-      this.setfdate({value: event.target.value});
+      this.setState({value: event.target.value});
+      alert(event.target.value);
+      alert("state is " + moment.utc(event.target.value).format("MMMM Do YYYY, h:mm:ss a")); //YYYY-MMM-DD h:mm
     }
-    // const data = new FormData(event.target);
 
-  //   fetch('/api/form-submit-url', {
-  //     method: 'POST',
-  //     body: data,
-  //   });
-  // }
 
   render() {
     return (
@@ -77,7 +75,7 @@ class Form extends React.Component {
             						  </div>
             						  <div className="form-group">
             						    <label htmlFor="finalDate">Final Date and Time</label>
-            						    <input type="datetime-local" required="required"className="form-control" id="finalDate" aria-describedby="finalDateHelp" name="fd" value={this.fdate.value} onChange={this.handleChange}/>
+            						    <input type="datetime-local" required="required"className="form-control" id="finalDate" aria-describedby="finalDateHelp" name="fd" value={this.state.value} onChange={this.handleChange}/>
             						  </div>
                           <fieldset>
             						  	<label htmlFor="Question">Choose the priority of study factor</label>

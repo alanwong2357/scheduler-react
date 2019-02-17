@@ -10,7 +10,6 @@ const localizer = BigCalendar.momentLocalizer(moment);
 class Calendar extends React.Component {
 
 
-  // import logo from "./logo.svg";
     state = {
       events: [
         // {
@@ -19,10 +18,11 @@ class Calendar extends React.Component {
         //   title: "Random Title"
         // },
         {
-          start: new Date(moment("Mon 03-Jul-2019, 11:00 AM")),
+          start: new Date(moment("2019-02-14 1:00")),
           end: new Date(moment("2019-02-14 1:00").add(2,"hours")),
           title: "Study for X"
-        }
+        },
+
       ]
     };
 
@@ -37,10 +37,9 @@ class Calendar extends React.Component {
               events={this.state.events}
               // views={['month','week','day']}
               // views={['month','week','day','agenda']}
-              style={{ height: "100vh", width: "100vh" }}
+              style={{ height: "100vh", width: "90vh" }}
             />
           </div>
-        // <h2>FINALS</h2>
 
       );
     }

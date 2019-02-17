@@ -6,6 +6,7 @@ body, html {
   background-image: url("https://stmed.net/sites/default/files/the-dark-knight-rises-wallpapers-29997-5887042.jpg");
   /* Full height */
   height: 100%;
+  width: 100%;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
